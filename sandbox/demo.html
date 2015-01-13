@@ -60,33 +60,27 @@ body{
 	position: absolute;
 }
 .item{
+	width: 50px;
+	height: 50px;
 	position: absolute;
-	margin: auto;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-
-	width: 80px;
-	height: 40px;
+	margin-left: -25px;
+	margin-top: -25px;
+	top:50%;
+	left:50%;
 	text-align: center;
-	line-height: 40px;
+	line-height: 50px;
 	vertical-align: middle;
 	transform-style: preserve-3d;
+	background-image: url(http://portrait4.sinaimg.cn/2153811561/blog/50);
 }
 
-.item .front,.item .back{
-	position: absolute;
-	font-weight: bold;	
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
+.item .content{
 	border-radius: 20px;
 	color: #fff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	transform-style: preserve-3d;
-}
-.item .back{
-	transform:rotateY(180deg);
 }
 .icon{
 	width: 100px;
@@ -114,55 +108,23 @@ body{
 	text-align: center;
 	line-height: 300px;
 	vertical-align: middle;
+	background: rgba(255,255,255,0.8);
 	font-size: 10em;
 	transform-style: preserve-3d;
 	transform:translateZ(-5000px);
 }
-.ticket .content{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	color: #fff;
-	transform-style: preserve-3d;
-}
-.ticket .front,.ticket .back{
-	position: absolute;
-	font-weight: bold;
-	width: 100%;
-	height: 100%;
-	border-radius: 150px;
-	backface-visibility: hidden;
-	background: rgba(255,200,200,0.8);
-}
-.ticket .back{
-	transform:rotateY(180deg);
-}
-.video-background{
-	position: absolute;
-	margin: auto;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	width: 150%;
-}
-.speed-text{
-	transform : translateZ(0);
-}
+
 .rotate-y-mid{
 	animation:rotate-y linear 10s infinite;
 }
 .rotate-x-slow{
-	animation:rotate-x linear 10s infinite;
+	animation:rotate-x linear 40s infinite;
 }
 .rotate-y-slow{
-	animation:rotate-y linear 6s infinite;
+	animation:rotate-y linear 35s infinite;
 }
 .rotate-z-slow{
-	animation:rotate-z linear 4.5s infinite;
-}
-.rotate-y-fast{
-	animation:rotate-y linear 3s infinite;
+	animation:rotate-z linear 30s infinite;
 }
 
 @keyframes rotate-x{
@@ -182,34 +144,24 @@ body{
 </style>
 </head>
 <body>
-<video id="video" class="video-background" preload autoplay loop="loop">
-	<source src="src/images/trailer.mp4" type='video/mp4'/>
-</video>
-<li id="item-demo" class="item rotate-y-fast" style="display:none;">
-	<div class="front"></div>
-	<div class="back"></div>
-</li>
-<ul id="speed" class="speed-text" style="color:#fff;z-index:100;"></ul>
+<div style="color:#fff;">操作方式：点击屏幕</div>
 <div id="box">
 	<div class="outer">
 		<div class="inner">
-			<ul class="scene" id="scene"></ul>
+			<ul class="scene" id="scene">
+				<li class="item"><div class="text"></div></li>
+			</ul>
 		</div>
 	</div>
 	<div class="icon">ICON</div>
-	<div class="ticket">
-		<div class="content">
-			<div class="front"></div>
-			<div class="back"></div>
-		</div>
-	</div>
+	<div class="ticket">test</div>
 </div>
-<script src="src/static/js/prefixfree.min.js"></script>
-<script src="src/static/js/jquery-2.0.3.min.js"></script>
-<script src="src/static/js/prefixfree.jquery.js"></script>
-<script src="src/static/js/jquery.extra.js"></script>
-<script src="src/static/js/jquery.transform.js"></script>
-<script src="src/static/js/jquery.transit.js"></script>
-<script src="src/static/js/speed-test.js"></script>
+<script src="../src/static/js/prefixfree.min.js"></script>
+<script src="../src/static/js/jquery-2.0.3.min.js"></script>
+<script src="../src/static/js/prefixfree.jquery.js"></script>
+<script src="../src/static/js/jquery.extra.js"></script>
+<script src="../src/static/js/jquery.transform.js"></script>
+<script src="../src/static/js/jquery.transit.js"></script>
+<script src="../src/static/js/luckydraw.js"></script>
 </body>
 </html>
