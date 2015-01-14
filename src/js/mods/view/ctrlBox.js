@@ -15,9 +15,7 @@ define('mods/view/ctrlBox',function(require,exports,module){
 		defaults : {
 			node : '#draw-ctrl',
 			events : {
-				'[data-role="shuffle"] click' : 'shuffle',
-				'[data-role="ok"] click' : 'ok',
-				'[data-role="cancel"] click' : 'cancel'
+				'[data-role="ok"] click' : 'ok'
 			}
 		},
 		build : function(){
@@ -39,14 +37,8 @@ define('mods/view/ctrlBox',function(require,exports,module){
 				root.removeClass('open');
 			}
 		},
-		shuffle : function(){
-			$channel.trigger('shuffle');
-		},
 		ok : function(){
 			$channel.trigger('pick-ok');
-		},
-		cancel : function(){
-			$channel.trigger('pick-cancel');
 		}
 	});
 

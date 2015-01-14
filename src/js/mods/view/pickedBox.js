@@ -58,10 +58,8 @@ define('mods/view/pickedBox',function(require,exports,module){
 			$lotteryModel.on('change:state', proxy('checkState'));
 			$sceneModel.on('change:rolling', proxy('checkState'));
 			$pickedBoxModel.on('change:showBoxBg', proxy('checkBoxBg'));
-			$channel.on('shuffle', proxy('shuffle'));
 			$channel.on('pick-ok', proxy('pickOk'));
 			$channel.on('decided', proxy('celebrate'));
-			$channel.on('pick-cancel', proxy('putback'));
 		},
 		//构造被挑中彩票
 		render : function(){

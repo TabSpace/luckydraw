@@ -10,12 +10,8 @@ define('mods/channel/global',function(require,exports,module){
 		'tip',
 		//重置抽奖数据
 		'reset',
-		//要求洗牌
-		'shuffle',
 		//选定当前彩票
 		'pick-ok',
-		//取消选定
-		'pick-cancel',
 		//决定中奖彩票
 		'decide',
 		//中奖彩票已经决定完成
@@ -33,8 +29,6 @@ define('mods/channel/global',function(require,exports,module){
 		//切换中奖列表
 		'toggle-winning-list',
 		//开始音乐
-		'toggle-music',
-		//切换奖品
-		'switch-prize'
+		'toggle-music'
 	]);
 });

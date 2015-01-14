@@ -557,15 +557,8 @@ arial 72号
 	<div class="state-panel">
 		<div class="count">
 			<p>
-				<span>本次抽取奖票数量 : </span>
+				<span>本轮抽取奖票数量 : </span>
 				<span id="draw-count"></span>
-			</p>
-		</div>
-		<div class="prize">
-			<p>
-				<span id="prize-name"></span>
-				<span> : </span>
-				<span id="winning-count"></span>
 			</p>
 		</div>
 	</div>
@@ -583,9 +576,15 @@ arial 72号
 				<p>设计师：刘鹏[liupeng3@staff.sina.com.cn][liuzimo126@126.com]</p>
 			</div>
 			<div class="config-box">
-				奖票总数：
-				<input data-role="count" type="number" value="" min="0" max="10000"/>
-				<button data-role="reset">重置奖箱</button>
+				<p>
+					随机生成奖票数据：<input data-role="count" type="number" value="" min="0" max="10000"/> 张
+				</p>
+				<p>
+					导入奖票文案(csv)：<input type="file"/> 
+				</p>
+				<p>
+					<button data-role="reset">重置奖箱</button>
+				</p>
 				<span data-role="confirm" style="display:none;">
 					确定要重置奖箱吗？
 					所有已抽奖数据都会丢失。
@@ -593,11 +592,6 @@ arial 72号
 					<button data-role="cancel">取消</button>
 				</span>
 			</div>
-			<div data-role="prize-manage" class="prize-manage">
-				<button data-role="add-prize">添加奖品</button>
-				<button data-role="save-prize">保存</button>
-			</div>
-			<ul data-role="prize-box" class="prize-box"></ul>
 		</div>
 		<div id="winning-box" class="winning-box center">
 			<div data-role="panel" class="panel"></div>
@@ -618,9 +612,7 @@ arial 72号
 			</div>
 		</div>
 		<div class="draw-ctrl" id="draw-ctrl">
-			<div class="button shuffle" data-role="shuffle"></div>
 			<div class="button ok" data-role="ok"></div>
-			<div class="button cancel" data-role="cancel"></div>
 		</div>
 	</div>
 	<div id="tip-box" class="tip-box"></div>

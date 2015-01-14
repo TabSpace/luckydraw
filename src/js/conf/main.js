@@ -30,7 +30,6 @@ define('conf/main', function(require, exports, module) {
     require('mods/ctrl/scene');
     require('mods/ctrl/config');
     require('mods/view/ctrlBox');
-    require('mods/view/prize');
     require('mods/view/winningBox');
     require('mods/view/audioBox');
 

@@ -48,12 +48,6 @@ define('mods/ctrl/config',function(require,exports,module){
 			}else if(keyCode === '40'){
 				//向下箭头
 				this.decreaseDrawCount();
-			}else if(keyCode === '37'){
-				//向左箭头
-				$channel.trigger('switch-prize', 'left');
-			}else if(keyCode === '39'){
-				//向右箭头
-				$channel.trigger('switch-prize', 'right');
 			}else if(keyCode === '67'){
 				//按键c
 				this.toggleSettings();
@@ -63,8 +57,6 @@ define('mods/ctrl/config',function(require,exports,module){
 			}else if(keyCode === '77'){
 				this.toggleMusic();
 			}
-
-			console.log(keyCode);
 		},
 		toggleMusic : function(){
 			$channel.trigger('toggle-music');
