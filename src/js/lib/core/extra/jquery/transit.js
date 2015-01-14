@@ -1,5 +1,5 @@
 /**
- * @fileoverview 封装使用 transition 和 animation 的动画
+ * @fileoverview 封装使用transition的动画
  * @authors liangdong2 <liangdong2@staff.sina.com.cn>
  */
 define('lib/core/extra/jquery/transit', function(require, exports, module) {
@@ -48,13 +48,13 @@ define('lib/core/extra/jquery/transit', function(require, exports, module) {
 		}
 	});
 
-	transform = prefix + 'transform';
-	cssReset[transitionProperty = prefix + 'transition-property'] =
-		cssReset[transitionDuration = prefix + 'transition-duration'] =
-		cssReset[transitionTiming = prefix + 'transition-timing-function'] =
-		cssReset[animationName = prefix + 'animation-name'] =
-		cssReset[animationDuration = prefix + 'animation-duration'] =
-		cssReset[animationTiming = prefix + 'animation-timing-function'] = '';
+	transform = 'transform';
+	cssReset[transitionProperty = 'transition-property'] =
+		cssReset[transitionDuration = 'transition-duration'] =
+		cssReset[transitionTiming = 'transition-timing-function'] =
+		cssReset[animationName = 'animation-name'] =
+		cssReset[animationDuration = 'animation-duration'] =
+		cssReset[animationTiming = 'animation-timing-function'] = '';
 
 	$.transition = {
 		off: (eventPrefix === undefined && testEl.style.transitionProperty === undefined),
@@ -123,7 +123,7 @@ define('lib/core/extra/jquery/transit', function(require, exports, module) {
 			}
 
 			if (duration > 0 && typeof properties === 'object') {
-				cssValues[transitionProperty] = cssProperties.join(', ');
+				cssValues[transitionProperty] = '*';
 				cssValues[transitionDuration] = duration + 's';
 				cssValues[transitionTiming] = (ease || 'linear');
 			}
@@ -138,6 +138,7 @@ define('lib/core/extra/jquery/transit', function(require, exports, module) {
 				$(event.target).unbind(endEvent, wrappedCallback);
 			}
 			$(this).css(cssReset);
+
 			if(callback){
 				callback.call(this);
 			}

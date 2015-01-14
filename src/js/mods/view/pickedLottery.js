@@ -111,6 +111,7 @@ define('mods/view/pickedLottery',function(require,exports,module){
 		setPos : function(pos){
 			this.vm.set(pos);
 		},
+		//检查显示和隐藏字母的时机
 		checkLetter : function(){
 			var shuffling = $pickedBoxModel.get('shuffling');
 			if(shuffling){
@@ -119,6 +120,7 @@ define('mods/view/pickedLottery',function(require,exports,module){
 				this.showLetter();
 			}
 		},
+		//显示字母
 		showLetter : function(){
 			var elBack = this.role('back');
 			var posX = this.vm.get('x');
@@ -149,6 +151,7 @@ define('mods/view/pickedLottery',function(require,exports,module){
 			var letter = arr[pos];
 			elBack.html(letter);
 		},
+		//隐藏字母
 		hideLetter : function(){
 			var elBack = this.role('back');
 			elBack.html('');
