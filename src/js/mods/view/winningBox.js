@@ -15,7 +15,7 @@ define('mods/view/winningBox',function(require,exports,module){
 		list : [
 			'{{#.}}',
 				'<div class="box">',
-					'<h3 class="title">{{prizeName}}</h3>',
+					'<h3 class="title">{{time}}</h3>',
 					'<ul class="list">',
 						'{{#items}}',
 							'<li>{{id}}</li>',
@@ -64,6 +64,23 @@ define('mods/view/winningBox',function(require,exports,module){
 			winning = $.extend(true, [], winning);
 
 			var data = [];
+			var winningMap = {};
+			winning.forEach(function(item){
+				var time = item.time;
+				if(!winningMap[time]){
+					winningMap[time] = [];
+				}
+				winningMap[time].push(item);
+			});
+
+			data = Object.keys(winningMap).sort(function(t1, t2){
+				return t2 - t1;
+			}).map(function(time){
+				var group = {};
+				group.time = (new Date(parseInt(time, 10))).toLocaleString();
+				group.items = winningMap[time];
+				return group;
+			});
 
 			var html = $mustache.render(TPL.list, data);
 			this.role('panel').html(html);
