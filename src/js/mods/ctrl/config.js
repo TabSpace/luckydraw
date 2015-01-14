@@ -10,7 +10,6 @@ define('mods/ctrl/config',function(require,exports,module){
 	var $configView = require('mods/view/config');
 	var $configModel = require('mods/model/config');
 	var $channel = require('mods/channel/global');
-	var $prizeModel = require('mods/model/prize');
 	var $lotteryModel = require('mods/model/lotteryBox');
 
 	//设置面板
@@ -22,15 +21,12 @@ define('mods/ctrl/config',function(require,exports,module){
 		build : function(){
 			this.view = new $configView();
 			this.checkSettings();
-			this.updatePrizeCount();
 		},
 		setEvents : function(){
 			var doc = $(document);
 			var proxy = this.proxy();
 			doc.on('keydown', proxy('handelKeydown'));
 			$configModel.on('change:showSettings', proxy('checkSettings'));
-			$channel.on('decided', proxy('updatePrizeCount'));
-			$channel.on('reset', proxy('updatePrizeCount'));
 		},
 		handelKeydown : function(evt){
 			var ctrl = evt.ctrlKey;
@@ -55,6 +51,7 @@ define('mods/ctrl/config',function(require,exports,module){
 				//按键p
 				$channel.trigger('toggle-winning-list');
 			}else if(keyCode === '77'){
+				//按键m
 				this.toggleMusic();
 			}
 		},
@@ -87,11 +84,6 @@ define('mods/ctrl/config',function(require,exports,module){
 			count --;
 			count = $limit(conf.minDrawCount, count, conf.maxDrawCount);
 			$configModel.set('drawCount', count);
-		},
-		//更新已中奖奖品数量
-		updatePrizeCount : function(){
-			var winning = $lotteryModel.getWinning(true);
-			$prizeModel.updateCount(winning);
 		}
 	});
 

@@ -87,7 +87,7 @@ define('mods/ctrl/scene',function(require,exports,module){
 			screenScene.addClass('scene-area');
 			x = ((1024 - 1024 * num) / 2) / num;
 			y = ((768 - 768 * num) / 2) / num;
-			console.log(num, x, y);
+
 			screenScene.transform({
 				'scale' : num,
 				'translateX' : 0 - x + 'px',
@@ -96,6 +96,15 @@ define('mods/ctrl/scene',function(require,exports,module){
 		}
 	};
 	setScale();
+
+	$(window).on('resize', function(){
+		var width = window.innerWidth;
+		if(width >= 1024){
+			setScale(0);
+		}else{
+			setScale(width / 1024);
+		}
+	});
 
 	module.exports = new Scene();
 

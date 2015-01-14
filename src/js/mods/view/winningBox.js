@@ -10,7 +10,6 @@ define('mods/view/winningBox',function(require,exports,module){
 	var $mustache = require('lib/more/mustache');
 	var $channel = require('mods/channel/global');
 	var $lotteryModel = require('mods/model/lotteryBox');
-	var $prizeModel = require('mods/model/prize');
 
 	var TPL = {
 		list : [
@@ -46,7 +45,6 @@ define('mods/view/winningBox',function(require,exports,module){
 			$channel.on('toggle-winning-list', proxy('toggle'));
 			$channel.on('decided', proxy('render'));
 			$channel.on('reset', proxy('render'));
-			$prizeModel.on('save', proxy('render'));
 			vm.on('change:visible', proxy('checkVisible'));
 		},
 		toggle : function(){
@@ -62,23 +60,10 @@ define('mods/view/winningBox',function(require,exports,module){
 			}
 		},
 		render : function(){
-			var prizeList = $prizeModel.getList(true);
 			var winning = $lotteryModel.getWinning(true);
 			winning = $.extend(true, [], winning);
 
 			var data = [];
-			prizeList.forEach(function(pitem){
-				var list = {};
-				var prize = pitem.id;
-				list.items = [];
-				list.prizeName = pitem.name;
-				winning.forEach(function(witem){
-					if(witem.prize === prize){
-						list.items.push(witem);
-					}
-				});
-				data.push(list);
-			});
 
 			var html = $mustache.render(TPL.list, data);
 			this.role('panel').html(html);

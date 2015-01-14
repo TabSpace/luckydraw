@@ -186,14 +186,12 @@ define('mods/model/lotteryBox',function(require,exports,module){
 			var winning = lotterys.winning;
 			var temp = [];
 			var item = null;
-			var currentPrize = $configModel.getCurrentPrize();
+			var time = Date.now();
 			while(picked.length){
 				item = picked.pop();
 				if(item.checked){
 					winning.push(item);
-					if(currentPrize){
-						item.prize = currentPrize.id;
-					}
+					item.time = time;
 				}else{
 					temp.push(item);
 				}
