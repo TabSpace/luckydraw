@@ -11,6 +11,7 @@ define('mods/view/scene',function(require,exports,module){
 	var $floatLottery = require('mods/view/floatLottery');
 	var $sceneModel = require('mods/model/scene');
 	var $channel = require('mods/channel/global');
+	var $pickedBoxModel = require('mods/model/pickedBox');
 
 	//模板
 	var TPL = {
@@ -56,6 +57,7 @@ define('mods/view/scene',function(require,exports,module){
 			var proxy = this.proxy();
 			this.delegate(action);
 			$lotteryModel.on('change:state', proxy('checkState'));
+			$pickedBoxModel.on('change', proxy('checkState'));
 			$channel.on('rolling-start', proxy('rotateScene'));
 			$channel.on('rolling', proxy('erupt'));
 			$channel.on('rolling-stop', proxy('shrink'));
@@ -68,12 +70,20 @@ define('mods/view/scene',function(require,exports,module){
 			}else{
 				this.hideBg();
 			}
-			if(state === 'ready'){
-				setTimeout(function(){
+
+			var shuffling = $pickedBoxModel.get('shuffling');
+			var celebrating = $pickedBoxModel.get('celebrating');
+			var depressing = $pickedBoxModel.get('depressing');
+			var putbacking = $pickedBoxModel.get('putbacking');
+			var animating = shuffling || celebrating || depressing || putbacking;
+
+			clearTimeout(this.prepareTimer);
+			if(state === 'ready' && !animating){
+				this.prepareTimer = setTimeout(function(){
 					if($lotteryModel.get('state') === 'ready'){
 						$lotteryModel.set('state', 'prepare');
 					}
-				},  10000);
+				},  2000);
 			}
 		},
 		showBg : function(){
