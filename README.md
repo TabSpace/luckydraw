@@ -1,39 +1,41 @@
-luckydraw
+HTML5抽奖动画
 ------------------------------------------
-A simple webapp for luckydraw
+一个用于抽奖的简单HTML5 APP
 
 ### luckydraw.html
-	The webapp for luckydraw.
+	入口页面.
 
 
-Controls and settings
+操作与设置
 ------------------------------------------
 
-### Controls
+### 控制
 
-- Enter : next step
-- Up : increase limit of card count.
-- Down : decrease limit of card count.
-- C : toggle setting panel.
-- P : toggle winning list panel.
-- M : play or stop music.
+- Enter : 进行下一步
+- ↑ : 增加这一轮抽奖可点开的卡片数量。
+- ↓ : 减少这一轮抽奖可点开的卡片数量。
+- C : 切换控制台面板的显示。
+- P : 切换中奖列表的显示。
+- M : 播放/暂停音乐。
 
 
-### Settings
+### 设置
 
-- It's chrome only !
+- 要求必须使用chrome浏览器最新稳定版 ！
 
-- Screen size
-	> The best screen setting is 1024 * 768 .
+- 屏幕宽高
+	> 最合适的屏幕宽高为 is 1024 * 768，改变屏幕宽度会自动按比例适配。
 	>
-	> Run setScale(0.5) in console for half size.
+	> 在chrome控制台执行函数 setScale(0.5) 可以设置屏幕显示一半宽度。
 	>
-	> Run setScale(0) in console for original screen settings.
-
-- Localstorage
-	> Data will be saved in any step.
+	> 在chrome控制台执行函数 setScale(0) 可还原屏幕为大小和位置。
 	>
-	> Click '[data-role="reset"]' in '#config-panel' will reset the data.
+	> 添加这个功能的原因，是有些LED屏幕仅能显示后台计算机的左上角区域屏幕。
+
+- 使用了 localstorage
+	> 在任何步骤都会保存数据，不怕浏览器刷新。
+	>
+	> 点击控制台的“重置奖箱”按钮会重置抽奖数据为初始状态。
 
 
-
+ 
