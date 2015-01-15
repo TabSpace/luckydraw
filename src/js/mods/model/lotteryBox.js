@@ -58,18 +58,27 @@ define('mods/model/lotteryBox',function(require,exports,module){
 		//初始化数据
 		//当不存在任何彩票数据时，初始化彩票数据
 		initData : function(){
-			var lotteryCount = $configModel.get('lotteryCount');
-			var i;
 			var prepared = lotterys.prepared;
 			var winning = lotterys.winning;
 			var picked = lotterys.picked;
-			if(!prepared.length && !winning.length && !picked.length){
+			if(prepared.length || winning.length || picked.length){
+				return;
+			}
+
+			var lotteryCount = $configModel.get('lotteryCount');
+			var lotteryData = $configModel.get('lotteryData');
+			
+			if(lotteryData && lotteryData.length){
+				[].push.apply(prepared, lotteryData);
+			}else{
+				var i;
 				for(i = 0; i < lotteryCount; i++){
 					prepared.push({
 						id : i + 1
 					});
 				}
 			}
+
 			this.sortPreparedData();
 			this.save();
 		},

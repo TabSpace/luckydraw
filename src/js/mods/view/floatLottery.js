@@ -38,10 +38,16 @@ define('mods/view/floatLottery',function(require,exports,module){
 		},
 		//渲染奖票
 		render : function(){
-			var data = this.vm.get();
-			var strId = data.id || '';
+			var id = this.vm.get('id');
+			var name = this.vm.get('name');
 			var elFront = this.role('float-front');
-			elFront.html(strId);
+			if(name && id){
+				elFront.html('<p>' + name + '</p><p>' + id + '</p>');
+			}else if(id){
+				elFront.html(id);
+			}else{
+				elFront.html('');
+			}
 		},
 		//获取距离中心的随机距离
 		getRandomDistance : function(){

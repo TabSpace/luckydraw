@@ -14,6 +14,8 @@ define('mods/model/config',function(require,exports,module){
 		defaults : {
 			//显示设置面板
 			showSettings : false,
+			//待抽奖数据
+			lotteryData : null,
 			//待抽奖奖票数量
 			lotteryCount : 100,
 			//本轮可抽取数量

@@ -70,8 +70,11 @@ define('mods/view/pickedLottery',function(require,exports,module){
 		//渲染彩票数据
 		render : function(){
 			var id = this.vm.get('id');
+			var name = this.vm.get('name');
 			var elFront = this.role('front');
-			if(id !== null){
+			if(name && id){
+				elFront.html('<p>' + name + '</p><p>' + id + '</p>');
+			}else if(id){
 				elFront.html(id);
 			}else{
 				elFront.html('');

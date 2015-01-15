@@ -16,7 +16,7 @@ define('mods/view/config',function(require,exports,module){
 			node : '#config-panel',
 			events : {
 				'[data-role="count"] input' : 'limitLotterys',
-				'[data-role="reset"] click' : 'checkReset',
+				'[data-role="reset"] click' : 'confirmReset',
 				'[data-role="ok"] click' : 'renderLotteryBox',
 				'[data-role="cancel"] click' : 'cancelReset'
 			}
@@ -60,15 +60,42 @@ define('mods/view/config',function(require,exports,module){
 			val = $limit(val, min, max);
 			input.val(val);
 		},
-		checkReset : function(){
+		confirmReset : function(){
 			this.role('reset').hide();
 			this.role('confirm').show();
 		},
 		renderLotteryBox : function(){
+			var that = this;
 			var count = this.role('count').val();
 			count = parseInt(count, 10) || $configModel.get('lotteryCount');
 			$configModel.set('lotteryCount', count);
 
+			var csvInput = this.role('file').get(0);
+			var blob = csvInput.files[0];
+			if(blob){
+				var reader = new FileReader();
+				reader.readAsText(blob, 'GBK');
+				reader.onload = function(){
+					var arr = reader.result.split(/[\r\n]+/);
+					arr = arr.filter(function(str){
+						return !!str.toString().trim();
+					}).map(function(str){
+						var item = {};
+						var itemArr = str.split(/[,;\t]+/);
+						item.id = itemArr[0].toString().trim();
+						item.name = itemArr[1].toString().trim();
+						return item;
+					});
+					$configModel.set('lotteryData', arr);
+					that.triggerReset();
+				};
+			}else{
+				$configModel.set('lotteryData', null);
+				this.triggerReset();
+			}
+		},
+		//触发奖票数据重置
+		triggerReset : function(){
 			$channel.trigger('reset');
 			this.role('confirm').hide();
 			this.role('reset').show();

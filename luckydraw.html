@@ -183,6 +183,10 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.item .front p{
+	line-height: 36px;
+	font-size: 27px;
+}
 .item .back{
 	background-image: url(src/images/lottery-back-144x72.png);
 	background-repeat: no-repeat;
@@ -283,6 +287,10 @@ arial 72号
 	vertical-align: middle;
 	background-image: url(src/images/lottery-front-200x100.png);
 	background-repeat: no-repeat;
+}
+.ticket .front p{
+	font-size: 36px;
+	line-height: 50px;
 }
 .ticket .back{
 	font-family: Arial;
@@ -434,6 +442,10 @@ arial 72号
 	font-size: 36px;
 	font-weight: bold;
 }
+.winning-box .list li p{
+	line-height: 25px;
+	font-size: 18px;
+}
 /* 模拟光标 */
 .cursor{
 	width: 12px;
@@ -580,7 +592,7 @@ arial 72号
 					随机生成奖票数据：<input data-role="count" type="number" value="" min="0" max="10000"/> 张
 				</p>
 				<p>
-					导入奖票文案(csv)：<input type="file"/> 
+					导入奖票文案(csv)：<input data-role="file" type="file"/> 
 				</p>
 				<p>
 					<button data-role="reset">重置奖箱</button>
