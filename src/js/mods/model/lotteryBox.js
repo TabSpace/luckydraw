@@ -68,8 +68,10 @@ define('mods/model/lotteryBox',function(require,exports,module){
 			var lotteryCount = $configModel.get('lotteryCount');
 			var lotteryData = $configModel.get('lotteryData');
 			
-			if(lotteryData && lotteryData.length){
-				[].push.apply(prepared, lotteryData);
+			if(lotteryData && lotteryData.length && lotteryData.forEach){
+				lotteryData.forEach(function(item){
+					prepared.push(item);
+				});
 			}else{
 				var i;
 				for(i = 0; i < lotteryCount; i++){
