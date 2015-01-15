@@ -22,13 +22,25 @@ define('mods/ctrl/scene',function(require,exports,module){
 		setEvents : function(){
 			var doc = $(document);
 			var proxy = this.proxy();
-			doc.on('keydown', proxy('handelKeydown'));
+			doc.on('keydown', proxy('handleKeydown'));
+			doc.on('click', proxy('handleClick'));
 		},
-		handelKeydown : function(evt){
+		handleKeydown : function(evt){
 			var ctrl = evt.ctrlKey;
 			var alt = evt.altKey;
 			var keyCode = evt.keyCode.toString();
 			if(keyCode === '13'){
+				this.toggle();
+			}
+		},
+		handleClick : function(evt){
+			var state = $lotteryModel.get('state');
+			var clickEnableStates = [
+				'prepare',
+				'ready',
+				'rolling'
+			];
+			if(evt.button === 0 && clickEnableStates.indexOf(state) >= 0){
 				this.toggle();
 			}
 		},
