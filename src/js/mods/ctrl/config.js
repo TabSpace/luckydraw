@@ -16,7 +16,7 @@ define('mods/ctrl/config',function(require,exports,module){
 	var Config = $controller.extend({
 		defaults : {
 			minDrawCount : 1,
-			maxDrawCount : 10
+			maxDrawCount : 16
 		},
 		build : function(){
 			this.view = new $configView();

@@ -290,7 +290,6 @@ define('mods/view/pickedBox',function(require,exports,module){
 			var decision = checkedItems.map(function(item){
 				return item.vm.get('id');
 			});
-			if(!decision.length){return;}
 			$channel.trigger('decide', decision);
 
 			//还原被选中的彩票，使其回到待选队列
@@ -303,30 +302,33 @@ define('mods/view/pickedBox',function(require,exports,module){
 			var winningItems = this.getWinningItems();
 			var step = 0;
 			var count = winningItems.length;
-			$pickedBoxModel.set('showBoxBg', false);
-			winningItems.sort(function(){
-				return Math.random() - 0.5;
-			});
-			$pickedBoxModel.set('celebrating', true);
-			var timer = setInterval(function(){
-				if(winningItems.length){
-					var item = winningItems.pop();
-					item.on('celebrated', function(){
-						step ++;
-						if(step >= count){
-							$pickedBoxModel.set('celebrating', false);
-						}
-					});
-					item.celebrate();
-				}else{
-					clearInterval(timer);
-					timer = null;
-				}
-			}, 200);
-
-			//有选中的就有没选中的，没选中的就去沮丧一下吧
-			this.depress();
-			this.restoreSceneState();
+			if(count > 0){
+				$pickedBoxModel.set('showBoxBg', false);
+				winningItems.sort(function(){
+					return Math.random() - 0.5;
+				});
+				$pickedBoxModel.set('celebrating', true);
+				var timer = setInterval(function(){
+					if(winningItems.length){
+						var item = winningItems.pop();
+						item.on('celebrated', function(){
+							step ++;
+							if(step >= count){
+								$pickedBoxModel.set('celebrating', false);
+							}
+						});
+						item.celebrate();
+					}else{
+						clearInterval(timer);
+						timer = null;
+					}
+				}, 200);
+				//有选中的就有没选中的，没选中的就去沮丧一下吧
+				this.depress();
+				this.restoreSceneState();
+			}else{
+				this.putback();
+			}
 		},
 		//未选中的彩票表示遗憾
 		depress : function(){
@@ -334,25 +336,27 @@ define('mods/view/pickedBox',function(require,exports,module){
 			var pickedItems = this.getPickedItems();
 			var step = 0;
 			var count = pickedItems.length;
-			pickedItems.sort(function(){
-				return Math.random() - 0.5;
-			});
-			$pickedBoxModel.set('depressing', true);
-			var timer = setInterval(function(){
-				if(pickedItems.length){
-					var item = pickedItems.pop();
-					item.on('depressed', function(){
-						step ++;
-						if(step >= count){
-							$pickedBoxModel.set('depressing', false);
-						}
-					});
-					item.depress();
-				}else{
-					clearInterval(timer);
-					timer = null;
-				}
-			}, 50);
+			if(count > 0){
+				pickedItems.sort(function(){
+					return Math.random() - 0.5;
+				});
+				$pickedBoxModel.set('depressing', true);
+				var timer = setInterval(function(){
+					if(pickedItems.length){
+						var item = pickedItems.pop();
+						item.on('depressed', function(){
+							step ++;
+							if(step >= count){
+								$pickedBoxModel.set('depressing', false);
+							}
+						});
+						item.depress();
+					}else{
+						clearInterval(timer);
+						timer = null;
+					}
+				}, 50);
+			}
 		},
 		//将选中彩票放回去
 		putback : function(){
