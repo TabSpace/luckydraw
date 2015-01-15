@@ -1,6 +1,6 @@
 /**
  * @fileoverview 利用hammer.js增强多点触摸交互
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/core/extra/jquery/hammer',function(require,exports,module){
 

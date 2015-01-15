@@ -1,6 +1,6 @@
 /**
  * @fileoverview 获取 transform translate 的不带单位的值
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/kit/dom/getTranslate',function(require,exports,module){
 

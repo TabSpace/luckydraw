@@ -1,6 +1,6 @@
 /**
  * @fileoverview 模板管理器
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @example
 	var $tpl = require('lib/kit/util/template');
 	var TPL = $tpl({

@@ -1,6 +1,6 @@
 /**
  * @fileoverview 触摸事件管理组件 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @url http://eightmedia.github.io/hammer.js/
  */
 define('vendor/hammer/hammer',function(require,exports,module){

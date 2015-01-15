@@ -1,6 +1,6 @@
 /**
  * @fileoverview ECMA-SCRIPT兼容处理
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/more/es5-safe',function(require,exports,module){

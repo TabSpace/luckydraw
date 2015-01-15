@@ -1,6 +1,6 @@
 /**
  * @fileoverview 定位
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/more/position', function(require,exports,module) {

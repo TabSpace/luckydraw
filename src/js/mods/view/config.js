@@ -1,6 +1,6 @@
 /**
  * @fileoverview 控制台UI
- * @authors liangdong2 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors liangdong2  <pillar0514@gmail.com>
  */
 define('mods/view/config',function(require,exports,module){
 
@@ -74,7 +74,7 @@ define('mods/view/config',function(require,exports,module){
 			var blob = csvInput.files[0];
 			if(blob){
 				var reader = new FileReader();
-				reader.readAsText(blob, 'GBK');
+				reader.readAsText(blob);
 				reader.onload = function(){
 					var arr = reader.result.split(/[\r\n]+/);
 					arr = arr.filter(function(str){

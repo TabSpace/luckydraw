@@ -1,6 +1,6 @@
 /**
  * @fileoverview 年会抽奖程序
- * @authors Tony.Liang 梁栋 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors Tony.Liang 梁栋  <pillar0514@gmail.com>
  * @designer 刘鹏[liupeng3@staff.sina.com.cn][liuzimo126@126.com]
  */
 //                   _oo0oo_

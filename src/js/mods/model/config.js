@@ -1,6 +1,6 @@
 /**
  * @fileoverview 控制参数
- * @authors liangdong2 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors liangdong2  <pillar0514@gmail.com>
  */
 
 define('mods/model/config',function(require,exports,module){

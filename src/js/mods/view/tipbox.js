@@ -1,6 +1,6 @@
 /**
  * @fileoverview 信息提示盒子
- * @authors liangdong2 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors liangdong2  <pillar0514@gmail.com>
  */
 define('mods/view/tipbox',function(require,exports,module){
 

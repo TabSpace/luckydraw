@@ -1,6 +1,6 @@
 /**
  * @fileoverview 动画运行方式库
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @from mootools
  * @example:
 	var $fx = require('lib/kit/util/fx');

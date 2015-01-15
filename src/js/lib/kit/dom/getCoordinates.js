@@ -1,6 +1,6 @@
 /**
  * @fileoverview 获取dom坐标，计算transform的影响
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/kit/dom/getCoordinates',function(require,exports,module){
 

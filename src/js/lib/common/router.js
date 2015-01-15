@@ -1,6 +1,6 @@
 /**
  * @fileoverview 路由管理器: 对比路由文件，检测哪些模块需要安装，哪些需要拆卸
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/router',function(require,exports,module){
 

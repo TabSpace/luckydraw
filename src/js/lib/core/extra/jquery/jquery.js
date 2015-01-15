@@ -1,6 +1,6 @@
 /**
  * @fileoverview jquery 函数扩充插件 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/core/extra/jquery/jquery',function(require,exports,module){
 

@@ -1,6 +1,6 @@
 /**
  * @fileoverview 页面统一隐藏容器工具 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/kit/dom/hiddenContainer',function(require,exports,module){
 

@@ -1,6 +1,6 @@
 /**
  * @fileoverview 解决点击空白处时，textarea与input焦点无法消失的问题
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/env/blur',function(require,exports,module){
 

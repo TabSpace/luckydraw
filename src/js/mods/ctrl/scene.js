@@ -1,6 +1,7 @@
 /**
  * @fileoverview 场景动画
- * @authors liangdong2 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors liangdong2  <pillar0514@gmail.com>
+ * 
  */
 define('mods/ctrl/scene',function(require,exports,module){
 
@@ -13,6 +14,8 @@ define('mods/ctrl/scene',function(require,exports,module){
 	var $sceneView = require('mods/view/scene');
 	var $pickedBoxModel = require('mods/model/pickedBox');
 	var $pickedBox = require('mods/view/pickedBox');
+	var $configModel = require('mods/model/config');
+	var $winningBox = require('mods/view/winningBox');
 
 	var Scene = $controller.extend({
 		defaults : {},
@@ -23,7 +26,7 @@ define('mods/ctrl/scene',function(require,exports,module){
 			var doc = $(document);
 			var proxy = this.proxy();
 			doc.on('keydown', proxy('handleKeydown'));
-			doc.on('click', proxy('handleClick'));
+			$('#screen .scene-view-box').on('click', proxy('handleClick'));
 		},
 		handleKeydown : function(evt){
 			var ctrl = evt.ctrlKey;
@@ -40,7 +43,12 @@ define('mods/ctrl/scene',function(require,exports,module){
 				'ready',
 				'rolling'
 			];
-			if(evt.button === 0 && clickEnableStates.indexOf(state) >= 0){
+			if(
+				evt.button === 0 &&
+				clickEnableStates.indexOf(state) >= 0 &&
+				!$configModel.get('showSettings') &&
+				!$winningBox.vm.get('visible')
+			){
 				this.toggle();
 			}
 		},

@@ -1,6 +1,6 @@
 /**
  * @fileoverview 隐藏iframe工具 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/kit/dom/hiddenIframe',function(require,exports,module){
 

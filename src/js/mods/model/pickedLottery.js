@@ -1,6 +1,6 @@
 /**
  * @fileoverview 被选中彩票
- * @authors liangdong2 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors liangdong2  <pillar0514@gmail.com>
  */
 define('mods/model/pickedLottery',function(require,exports,module){
 

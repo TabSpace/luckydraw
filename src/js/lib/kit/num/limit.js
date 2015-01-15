@@ -1,6 +1,6 @@
 /**
  * @fileoverview 限制数字在一个范围内
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @param {Number} num 要限制的数字
  * @param {Number} min 最小边界
  * @param {Number} max 最大边界

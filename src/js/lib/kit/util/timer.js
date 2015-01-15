@@ -1,6 +1,6 @@
 /**
  * @fileoverview 用 requestAnimationFrame 包装定时器
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/kit/util/timer',function(require,exports,module){

@@ -1,6 +1,6 @@
 /**
  * @fileoverview 用户状态管理
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/user',function(require,exports,module){
 

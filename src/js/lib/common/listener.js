@@ -1,6 +1,6 @@
 /**
  * @fileoverview 广播组件
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/listener',function(require,exports,module){
 

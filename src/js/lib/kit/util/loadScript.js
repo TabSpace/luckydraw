@@ -1,7 +1,7 @@
 /**
  * @fileoverview 加载script
  * @desc 该方法为zepto而存在，使用jquery请用$.getScript替代
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/kit/util/loadScript',function(require,exports,module){

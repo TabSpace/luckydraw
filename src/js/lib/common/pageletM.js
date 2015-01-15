@@ -1,6 +1,6 @@
 /**
  * @fileoverview 页面模块管理器: 管理模块的安装与拆卸
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/pageletM',function(require,exports,module){
 

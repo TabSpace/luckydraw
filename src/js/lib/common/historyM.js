@@ -1,6 +1,6 @@
 /**
  * @fileoverview 地址管理器：pushState解决方案
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/historyM',function(require,exports,module){
 

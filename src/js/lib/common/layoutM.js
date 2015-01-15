@@ -4,7 +4,7 @@
  * 实际上就是做了一次双向检查。
  * 插入布局时，检查所有已存在模块，将模块安装到对应布局上。
  * 插入模块时，检查所有已存在布局，将模块安装到对应布局上。
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/layoutM',function(require,exports,module){
 

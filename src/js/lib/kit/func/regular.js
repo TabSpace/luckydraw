@@ -1,6 +1,6 @@
 /**
  * @fileoverview 包装为规律触发的函数，用于降低密集事件的处理频率
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @param {Function} fn 要延迟触发的函数
  * @param {Number} delay 延迟时间[ms]
  * @param {Object} bind 函数的this指向

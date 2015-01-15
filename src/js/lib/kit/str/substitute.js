@@ -1,6 +1,6 @@
 /**
  * @fileoverview 简单模板函数 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @from Mootools
  * @param {String} str 要替换模板的字符串
  * @param {Object} obj 模板对应的数据对象

@@ -1,6 +1,6 @@
 /**
  * @fileoverview 内容管理器: 解决获取页面内容的问题 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/contentM',function(require,exports,module){
 

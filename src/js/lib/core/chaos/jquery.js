@@ -1,6 +1,6 @@
 /**
  * @fileoverview jquery lib 混合文件 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/core/chaos/jquery',function(require,exports,module){
 

@@ -1,6 +1,6 @@
 /**
  * @fileoverview jquery插件 - 提供免前缀设置CSS3功能 
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/core/extra/jquery/prefixfree',function(require,exports,module){
 

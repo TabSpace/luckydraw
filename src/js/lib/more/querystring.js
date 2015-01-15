@@ -1,6 +1,6 @@
 /**
  * @fileoverview JSON与参数串的切换
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/more/querystring', function(require,exports,module) {

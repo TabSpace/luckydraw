@@ -1,6 +1,6 @@
 /**
  * @fileoverview 模板渲染
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('vendor/mustache',function(require,exports,module){

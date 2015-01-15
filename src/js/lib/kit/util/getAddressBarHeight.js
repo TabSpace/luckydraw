@@ -1,6 +1,6 @@
 /**
  * @fileoverview 获取导航条高度
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/kit/util/getAddressBarHeight',function(require,exports,module){

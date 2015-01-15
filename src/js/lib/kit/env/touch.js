@@ -1,6 +1,6 @@
 /**
  * @fileoverview touch 环境检测
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/kit/env/touch',function(require,exports,module){

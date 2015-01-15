@@ -1,6 +1,6 @@
 /**
  * @fileoverview 事件
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 
 define('lib/more/events',function(require,exports,module){

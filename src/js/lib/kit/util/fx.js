@@ -1,6 +1,6 @@
 /**
  * @fileoverview 动画类 - 用于处理不适合使用transition的场景
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  * @from mootools
  */
 

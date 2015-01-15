@@ -1,6 +1,6 @@
 /**
  * @fileoverview 动画场景模型
- * @authors liangdong2 <liangdong2@staff.sina.com.cn> <pillar0514@gmail.com>
+ * @authors liangdong2  <pillar0514@gmail.com>
  */
 define('mods/model/scene',function(require,exports,module){
 

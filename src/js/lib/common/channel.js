@@ -1,6 +1,6 @@
 /**
  * @fileoverview 公共广播频道
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/channel',function(require,exports,module){
 

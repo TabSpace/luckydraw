@@ -1,6 +1,6 @@
 /**
  * @fileoverview 事件对象绑定
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/mvc/delegate', function(require,exports,module) {
 

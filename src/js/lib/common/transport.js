@@ -1,6 +1,6 @@
 /**
  * @fileoverview 通用接口组件
- * @authors liangdong2 <liangdong2@staff.sina.com.cn>
+ * @authors liangdong2 
  */
 define('lib/common/transport',function(require,exports,module){
 
