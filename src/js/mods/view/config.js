@@ -86,7 +86,18 @@ define('mods/view/config',function(require,exports,module){
 						item.name = itemArr[1].toString().trim();
 						return item;
 					});
-					$configModel.set('lotteryData', arr);
+
+					//避免数据有误，出现号码重复的现象
+					var hash = {};
+					var data = [];
+					arr.forEach(function(item){
+						if(!hash[item.id]){
+							hash[item.id] = true;
+							data.push(item);
+						}
+					});
+
+					$configModel.set('lotteryData', data);
 					that.triggerReset();
 				};
 			}else{
