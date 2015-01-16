@@ -28,7 +28,7 @@ define('mods/view/floatLottery',function(require,exports,module){
 		},
 		//重置奖票数据
 		reset : function(){
-			this.data = {};
+			this.vm.clear();
 			this.render();
 		},
 		//设置奖票数据
@@ -97,13 +97,17 @@ define('mods/view/floatLottery',function(require,exports,module){
 				'rotateZ' : 0,
 				'translateX' : 0,
 				'translateZ' : 0
-			}, 1000, 'ease-in', function(){
+			}, 1000, 'ease-in');
+
+			//这里的transitionEnd有可能被误触发
+			//zepto的transitionEnd回调并不可靠，应当封装为一次性执行函数
+			setTimeout(function(){
 				elSurfaceBox.css('animation', '');
 				elSurfaceOuter.css('animation', '');
 				elSurface.css('animation', '');
 				//隐藏返回的彩票有助于提升动画性能
 				that.root.hide();
-			});
+			}, 1000);
 		}
 	});
 
